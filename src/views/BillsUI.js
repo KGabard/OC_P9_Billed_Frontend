@@ -1,11 +1,11 @@
 import VerticalLayout from './VerticalLayout.js'
-import ErrorPage from "./ErrorPage.js"
-import LoadingPage from "./LoadingPage.js"
+import ErrorPage from './ErrorPage.js'
+import LoadingPage from './LoadingPage.js'
 
 import Actions from './Actions.js'
 
 const row = (bill) => {
-  return (`
+  return `
     <tr>
       <td>${bill.type}</td>
       <td>${bill.name}</td>
@@ -16,16 +16,52 @@ const row = (bill) => {
         ${Actions(bill.fileUrl)}
       </td>
     </tr>
-    `)
+    `
+}
+
+function convertDate(dateString) {
+  // Split the date string into its component parts
+  const [day, month, year] = dateString.split(' ')
+
+  // Map the month name to a month number
+  const months = {
+    'Jan.': '01',
+    'Fév.': '02',
+    'Mar.': '03',
+    'Avr.': '04',
+    'Mai.': '05',
+    'Jun.': '06',
+    'Jul.': '07',
+    'Aoû.': '08',
+    'Sep.': '09',
+    'Oct.': '10',
+    'Nov.': '11',
+    'Déc.': '12',
   }
 
+  // Use the month number to construct the ISO-8601 date string
+  // return `${year}-${months[month]}-${day}`;
+  return [parseInt(year), parseInt(months[month]), parseInt(day)]
+}
+
+const sortByDateDescending = (array) => {
+  return array.sort((a, b) => {
+    const dateA = convertDate(a.date)
+    const dateB = convertDate(b.date)
+    const valueDateA = new Date(dateA[0], dateA[1] - 1, dateA[2]).getTime()
+    const valueDateB = new Date(dateB[0], dateB[1] - 1, dateB[2]).getTime()
+    return valueDateB - valueDateA
+  })
+}
+
 const rows = (data) => {
-  return (data && data.length) ? data.map(bill => row(bill)).join("") : ""
+  if (!data || !data.length) return
+  const dataChronoSorted = sortByDateDescending(data)
+  return dataChronoSorted.map((bill) => row(bill)).join('')
 }
 
 export default ({ data: bills, loading, error }) => {
-  
-  const modal = () => (`
+  const modal = () => `
     <div class="modal fade" id="modaleFile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
@@ -40,15 +76,15 @@ export default ({ data: bills, loading, error }) => {
         </div>
       </div>
     </div>
-  `)
+  `
 
   if (loading) {
     return LoadingPage()
   } else if (error) {
     return ErrorPage(error)
   }
-  
-  return (`
+
+  return `
     <div class='layout'>
       ${VerticalLayout(120)}
       <div class='content'>
@@ -76,5 +112,4 @@ export default ({ data: bills, loading, error }) => {
       </div>
       ${modal()}
     </div>`
-  )
 }
