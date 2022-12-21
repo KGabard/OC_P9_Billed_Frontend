@@ -19,7 +19,7 @@ const row = (bill) => {
     `
 }
 
-function convertDate(dateString) {
+const convertDate = (dateString) => {
   // Split the date string into its component parts
   const [day, month, year] = dateString.split(' ')
 
@@ -45,7 +45,7 @@ function convertDate(dateString) {
 }
 
 const sortByDateDescending = (array) => {
-  return array.sort((a, b) => {
+  array.sort((a, b) => {
     const dateA = convertDate(a.date)
     const dateB = convertDate(b.date)
     const valueDateA = new Date(dateA[0], dateA[1] - 1, dateA[2]).getTime()
@@ -56,8 +56,8 @@ const sortByDateDescending = (array) => {
 
 const rows = (data) => {
   if (!data || !data.length) return
-  const dataChronoSorted = sortByDateDescending(data)
-  return dataChronoSorted.map((bill) => row(bill)).join('')
+  sortByDateDescending(data)
+  return data.map((bill) => row(bill)).join('')
 }
 
 export default ({ data: bills, loading, error }) => {

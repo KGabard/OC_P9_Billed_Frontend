@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "jest --noStackTrace"
+    "test": "jest --noStackTrace --silent"
   },
   "jest": {
     "verbose": false,
