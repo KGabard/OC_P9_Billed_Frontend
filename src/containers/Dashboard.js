@@ -7,11 +7,11 @@ import Logout from './Logout.js'
 
 export const filteredBills = (data, status) => {
   return data && data.length
-    ? data.filter((bill) => {
-        let selectCondition
-
-        // in jest environment
-        if (typeof jest !== 'undefined') {
+  ? data.filter((bill) => {
+    let selectCondition
+    
+    // in jest environment
+    if (typeof jest !== 'undefined') {
           selectCondition = bill.status === status
         } else {
           /* istanbul ignore next */
@@ -95,7 +95,6 @@ export default class {
   }
 
   handleEditTicket(e, bill, bills) {
-    console.log('click');
     if (this.counter === undefined || this.id !== bill.id) this.counter = 0
     if (this.id === undefined || this.id !== bill.id) this.id = bill.id
     if (this.counter % 2 === 0) {
@@ -148,6 +147,9 @@ export default class {
       $(`#status-bills-container${this.index}`).html(
         cards(filteredBills(bills, getStatus(this.index)))
       )
+      // $(`#status-bills-container${this.index}`).html(
+      //   cards(filteredBills(bills, getStatus(this.index)))
+      // )
       this.counter++
     } else {
       $(`#arrow-icon${this.index}`).css({ transform: 'rotate(90deg)' })

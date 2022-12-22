@@ -28,8 +28,6 @@ export default class NewBill {
       .files[0]
     const filePath = e.target.value.split(/\\/g)
     const fileName = filePath[filePath.length - 1]
-    console.log(fileName)
-    console.log(isFileExtensionValid(fileName))
     if (!isFileExtensionValid(fileName)) {
       this.document.querySelector(`input[data-testid="file"]`).value=''
       return
@@ -48,7 +46,6 @@ export default class NewBill {
         },
       })
       .then(({ fileUrl, key }) => {
-        console.log(fileUrl)
         this.billId = key
         this.fileUrl = fileUrl
         this.fileName = fileName
