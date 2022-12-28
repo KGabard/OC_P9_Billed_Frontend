@@ -31,6 +31,7 @@
     "babel-jest": "^26.1.0",
     "jest": "^28.x",
     "jest-environment-jsdom": "^28.x",
+    "jest-environment-jsdom-global": "^4.0.0",
     "jest-html-reporter": "^3.7.0"
   }
 }
