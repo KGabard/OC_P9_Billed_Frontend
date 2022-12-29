@@ -22,7 +22,6 @@ export default class NewBill {
     return regex.test(fileName)
   }
   handleChangeFile = (e) => {
-    console.log('HEEEEEEEEY');
     e.preventDefault()
     const file = this.document.querySelector(`input[data-testid="file"]`)
       .files[0]

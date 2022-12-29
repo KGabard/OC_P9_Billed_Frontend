@@ -97,7 +97,6 @@ describe('Given I am connected as an employee', () => {
       })
 
       jest.spyOn(newBill, 'isFileExtensionValid').mockReturnValueOnce(true)
-      console.log('AVANT')
       fireEvent.change(expenseFileInput, { target: { files: [testFile] } })
     })
 
