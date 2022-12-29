@@ -13,8 +13,8 @@ const convertDate = (dateString) => {
     'Mar.': '03',
     'Avr.': '04',
     'Mai.': '05',
-    'Jun.': '06',
-    'Jul.': '07',
+    'Jui.': '06',
+    'Jui.': '07',
     'Aoû.': '08',
     'Sep.': '09',
     'Oct.': '10',
@@ -33,6 +33,12 @@ const sortByDateDescending = (array) => {
     const dateB = convertDate(b.date)
     const valueDateA = new Date(dateA[0], dateA[1] - 1, dateA[2]).getTime()
     const valueDateB = new Date(dateB[0], dateB[1] - 1, dateB[2]).getTime()
+    console.log(a.date);
+    console.log(b.date);
+    console.log(dateA);
+    console.log(dateB);
+    console.log(valueDateA);
+    console.log(valueDateB);
     return valueDateB - valueDateA
   })
 }
