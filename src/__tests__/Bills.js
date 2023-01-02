@@ -123,7 +123,7 @@ describe('Given I am connected as an employee', () => {
       document.body.innerHTML = BillsUI({ data: billsList })
       const dates = screen
         .getAllByText(
-          /\d{1,2} (Jan\.|Fév\.|Mar\.|Avr\.|Mai\.|Jun\.|Jul\.|Aoû\.|Sep\.|Oct\.|Nov\.|Déc\.) \d{2}/i
+          /\d{1,2} (Jan\.|Fév\.|Mar\.|Avr\.|Mai\.|Jui\.|Jui\.|Aoû\.|Sep\.|Oct\.|Nov\.|Déc\.) \d{2}/i
         )
         .map((a) => a.innerHTML)
       const antiChrono = (a, b) => (a < b ? 1 : -1)

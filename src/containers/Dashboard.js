@@ -147,9 +147,6 @@ export default class {
       $(`#status-bills-container${this.index}`).html(
         cards(filteredBills(bills, getStatus(this.index)))
       )
-      // $(`#status-bills-container${this.index}`).html(
-      //   cards(filteredBills(bills, getStatus(this.index)))
-      // )
       this.counter++
     } else {
       $(`#arrow-icon${this.index}`).css({ transform: 'rotate(90deg)' })

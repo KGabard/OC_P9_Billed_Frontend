@@ -19,44 +19,8 @@ const row = (bill) => {
     `
 }
 
-// const convertDate = (dateString) => {
-//   // Split the date string into its component parts
-//   const [day, month, year] = dateString.split(' ')
-
-//   // Map the month name to a month number
-//   const months = {
-//     'Jan.': '01',
-//     'Fév.': '02',
-//     'Mar.': '03',
-//     'Avr.': '04',
-//     'Mai.': '05',
-//     'Jun.': '06',
-//     'Jul.': '07',
-//     'Aoû.': '08',
-//     'Sep.': '09',
-//     'Oct.': '10',
-//     'Nov.': '11',
-//     'Déc.': '12',
-//   }
-
-//   // Use the month number to construct the ISO-8601 date string
-//   // return `${year}-${months[month]}-${day}`;
-//   return [parseInt(year), parseInt(months[month]), parseInt(day)]
-// }
-
-// const sortByDateDescending = (array) => {
-//   array.sort((a, b) => {
-//     const dateA = convertDate(a.date)
-//     const dateB = convertDate(b.date)
-//     const valueDateA = new Date(dateA[0], dateA[1] - 1, dateA[2]).getTime()
-//     const valueDateB = new Date(dateB[0], dateB[1] - 1, dateB[2]).getTime()
-//     return valueDateB - valueDateA
-//   })
-// }
-
 const rows = (data) => {
   if (!data || !data.length) return
-  // sortByDateDescending(data)
   return data.map((bill) => row(bill)).join('')
 }
 
