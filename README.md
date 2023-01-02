@@ -51,7 +51,7 @@ jest --noStackTrace --silent --coverage
 Il est nécessaire de lancer le serveur du back-end avant de pouvoir utiliser cette application.
 
 ### 2. Back-end
-Le code du back-end mis à jour est disponible : [ici](https://github.com/KGabard/OC_P9_Billed_Backend)
+Le code du back-end est disponible : [ici](https://github.com/KGabard/OC_P9_Billed_Backend)
 
 Pour démarrer le serveur Back-end :
 
