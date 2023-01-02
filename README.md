@@ -1,16 +1,16 @@
 # OC Projet n°9 : Billed
 
 ## Objectifs
-- Correction de bugs sur un projet existant
-- Utilisation des devTools pour le débogage : console, inspecteur, débogeur, onglet network
+- Correction de bugs sur un projet existant.
+- Utilisation des devTools pour le débogage : console, inspecteur, débogueur, onglet network.
 - Utilisation de Jest: 
   * rapports de test,
   * taux de couverture,
   * librairies pour manipuler le DOM,
-  * données et fonctions mockées
-- Mise en place de tests unitaire et d'intégration
-- Rédaction d'un plan de test E2E
-- Utilisation d'un Kanban
+  * données et fonctions mockées.
+- Mise en place de tests unitaire et d'intégration.
+- Rédaction d'un plan de test E2E.
+- Utilisation d'un Kanban.
 
 ## Description
 Billed est une entreprise qui produit des solutions Saas destinées aux équipes de ressources humaines.
@@ -59,7 +59,7 @@ npm run run:dev
 ```
 
 ### 3. Comptes et utilisateurs :
-Vous pouvez vous connecter en utilisant les comptes:
+Vous pouvez vous connecter en utilisant les comptes :
 
 Administrateur : 
 ```
@@ -73,11 +73,11 @@ mot de passe : employee
 ```
 
 ## Documents Openclassrooms
-- Code original du Front-end: https://github.com/OpenClassrooms-Student-Center/Billed-app-FR-Front
-- Code original du Back-end: https://github.com/OpenClassrooms-Student-Center/Billed-app-FR-back
+- Code original du Front-end: [ici](https://github.com/OpenClassrooms-Student-Center/Billed-app-FR-Front)
+- Code original du Back-end: [ici](https://github.com/OpenClassrooms-Student-Center/Billed-app-FR-back)
 
-Nous avons dans le [Kanban Notion](https://www.notion.so/a7a612fc166747e78d95aa38106a55ec?v=2a8d3553379c4366b6f66490ab8f0b90):
+Nous avons dans le [Kanban Notion](https://www.notion.so/a7a612fc166747e78d95aa38106a55ec?v=2a8d3553379c4366b6f66490ab8f0b90) :
 
-- 4 bugs à corriger
-- Des tests d'intégration à créer pour les fichier Bills.js et NewBill.js avec minimum 80% de _code coverage_ 
-- Un test "End-to-end" sur le parcours employé à rédiger
+- 4 bugs à corriger.
+- Des tests d'intégration à créer pour les fichiers Bills.js et NewBill.js avec minimum 80% de _code coverage_.
+- Un test "End-to-end" pour le parcours employé à rédiger.
